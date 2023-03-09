@@ -3,15 +3,12 @@ on:
   push:
     branches:
      - main
-    inputs:
-      region:
-        description: 'AWS Region'
-        required: true
-        default: 'ap-southeast-1'
 
 jobs:
    Deploy:
      runs-on: ubuntu-latest
+     env: 
+        aws-region: "ap-southeast-1"
      steps:
       - name: Setup   
         run: echo "Hi Eric"
@@ -25,7 +22,7 @@ jobs:
         with:
          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-         aws-region: ${{ github.event.inputs.region}}
+         aws-region: ${{ env.aws-region}}
       - name: Get changed files
         id: changed-files
         uses: tj-actions/changed-files@v35
