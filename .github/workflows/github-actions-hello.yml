@@ -8,9 +8,8 @@ jobs:
    Deploy:
      runs-on: ubuntu-latest
      steps:
-      - name: Setup   
+       - name: Setup   
        - run: echo "Hi Eric"
-       - run: ls
     
       - name: Checkout 
         uses: actions/checkout@v3
