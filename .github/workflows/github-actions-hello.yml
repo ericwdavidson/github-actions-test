@@ -9,9 +9,9 @@ jobs:
      runs-on: ubuntu-latest
      steps:
       - name: Setup   
-      - run: echo "Hi Eric"
+        run: echo "Hi Eric"
       - name: Checkout 
         uses: actions/checkout@v3
       - name: Teardown
-      - run: ls 
+        run: ls 
 
